@@ -99,10 +99,29 @@ df_final['target'] = y
 
 # STREAMLIT
 st.set_page_config(
-  page_title = "Hungarian Heart Disease",
-  page_icon = ":heart:"
+    page_title="Hungarian Heart Disease",
+    page_icon=":heart:",
+    layout="wide",  # Change layout to wide
+    initial_sidebar_state="collapsed"  # Collapse the sidebar by default
 )
-
+st.markdown(
+    """
+    <style>
+        body {
+            background-color: #f3f3f3;  /* Set background color */
+            color: #333333;  /* Set text color */
+        }
+        .sidebar .sidebar-content {
+            background-color: #ffffff;  /* Set sidebar background color */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Add shadow to sidebar */
+        }
+        .widget-title {
+            color: #3498db !important;  /* Set title color */
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 st.title("Hungarian Heart Disease")
 st.write(f"**_Model's Accuracy_** :  :green[**{accuracy}**]% (:red[_Do not copy outright_])")
 st.write("")
